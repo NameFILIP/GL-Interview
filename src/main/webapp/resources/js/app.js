@@ -4,10 +4,10 @@ var heavyWorkApp = angular.module('heavyWorkApp', ['ngRoute']);
 
 heavyWorkApp.config([ '$routeProvider', function($routeProvider) {
 	$routeProvider.when('/', {
-		templateUrl : 'resources/html/partials/form.html',
+		templateUrl : '/resources/html/partials/form.html',
 		controller : 'FormController'
 	}).when('/result', {
-		templateUrl : 'resources/html/partials/result.html',
+		templateUrl : '/resources/html/partials/result.html',
 		controller : 'ResultController'
 	}).otherwise({
 		redirectTo : '/'
