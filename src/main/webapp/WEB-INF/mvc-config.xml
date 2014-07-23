@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Just autodetect POJOs labeled with the @Controller annotation. 
+        Otherwise beans will be scanned in both contexts and this will override the parent (application-context.xml).
+        See http://stackoverflow.com/questions/7774295/spring-xml-file-configuration-hierarchy-help-explanation/7774597#7774597
+        For example, a bean with the @Async method will be scanned in both contexts, and the version from the child context (DispatcherServlet)  
+        will override the one in the parent context, where <task:annotation-driven /> was declared. -->
+    <context:component-scan base-package="org.namefilip.heavywork.controller" />
+    
+    <!-- Turns on support for mapping requests to Spring MVC @Controller methods
+         Also registers default Formatters and Validators for use across all @Controllers -->
+    <mvc:annotation-driven />
+    
+
+    <!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources -->
+    <mvc:resources location="/resources/" mapping="/resources/**"/>
+
+    <!-- Allows for mapping the DispatcherServlet to "/" by forwarding static resource 
+    requests to the container's default Servlet -->
+<!--     <mvc:default-servlet-handler/> -->
+    
+    <!-- Selects a static view for rendering without the need for an explicit controller -->
+<!--     <mvc:view-controller path="/" view-name="index"/> -->
+    
+
+<!--     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
+<!--             <property name="prefix" value="/resources/html/"/> -->
+<!--             <property name="suffix" value=".html"/> -->
+<!--     </bean> -->
+</beans>
