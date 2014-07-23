@@ -22,16 +22,4 @@
     <!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources -->
     <mvc:resources location="/resources/" mapping="/resources/**"/>
 
-    <!-- Allows for mapping the DispatcherServlet to "/" by forwarding static resource 
-    requests to the container's default Servlet -->
-<!--     <mvc:default-servlet-handler/> -->
-    
-    <!-- Selects a static view for rendering without the need for an explicit controller -->
-<!--     <mvc:view-controller path="/" view-name="index"/> -->
-    
-
-<!--     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
-<!--             <property name="prefix" value="/resources/html/"/> -->
-<!--             <property name="suffix" value=".html"/> -->
-<!--     </bean> -->
 </beans>

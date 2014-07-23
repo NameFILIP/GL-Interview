@@ -29,6 +29,14 @@ public class HeavyWorkController {
 	@Autowired
 	HeavyWorkService heavyWorkService;
 	
+	
+	/**
+	 * 
+	 * Handles the POST request and lets HeavyWorkService to start processing
+	 * 
+	 * @param counterData - contains data submitted by user
+	 * @param request
+	 */
 	@ResponseBody
 	@RequestMapping(value="/start", method = RequestMethod.POST)
 	public void count(@RequestBody CounterData counterData, HttpServletRequest request) {
@@ -36,6 +44,11 @@ public class HeavyWorkController {
 		request.getSession().setAttribute(HEAVY_WORK_SERVICE_RESULT, result);
 	}
 	
+	/**
+	 * If the counter is running it returns a string "Running".
+	 * If the task has been successfully completed, it returns the result of the computation.
+	 * 
+	 */
 	@ResponseBody
 	@RequestMapping(value="/status", method = RequestMethod.GET)
 	public String status(HttpServletRequest request) {

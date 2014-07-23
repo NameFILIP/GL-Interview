@@ -25,7 +25,7 @@ heavyWorkApp.controller('FormController', ['$scope', '$http', '$location', funct
 	
 }]);
 
-heavyWorkApp.controller('ResultController', ['$scope', '$http', '$location', '$timeout', function($scope, $http, $location, $timeout) {
+heavyWorkApp.controller('ResultController', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
 
 	$scope.running = true;
 	// Start polling status every second
