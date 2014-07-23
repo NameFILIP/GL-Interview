@@ -29,3 +29,8 @@
 	width: 60%;
 	margin: 50px auto;
 }
+
+/* Bootstrap dirty fix */
+.progress-bar[aria-valuenow="1"],.progress-bar[aria-valuenow="2"] {
+	min-width: 0px;
+}
