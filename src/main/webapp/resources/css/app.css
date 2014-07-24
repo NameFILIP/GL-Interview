@@ -44,4 +44,8 @@
   #result-progress-bar {
     margin: 50px auto; 
   }
+  
+  .centered {
+    top: 20%;
+  }
 }
