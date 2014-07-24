@@ -34,3 +34,14 @@
 .progress-bar[aria-valuenow="1"],.progress-bar[aria-valuenow="2"] {
 	min-width: 0px;
 }
+
+/* Landscape phones and portrait tablets */
+@media (max-height: 520px) {
+  #logo, h3, #answer {
+    font-size: 20px;
+  }
+  
+  #result-progress-bar {
+    margin: 50px auto; 
+  }
+}
